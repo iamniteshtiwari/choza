@@ -1,0 +1,1744 @@
+/* common 
+*******************
+*/
+
+body {
+  background-color: white;
+
+  padding: 0;
+  margin: 0;
+}
+.header-box {
+  background-color: #6AC44F;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.choza {
+  color: #373836;
+  font-size: 22px;
+  font-family: spartan;
+  font-weight: bold;
+}
+
+.Sign-In a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.cart-icon {
+  display: inline;
+}
+
+.Sign-In .cart-icon a {
+  margin-top: 5%;
+}
+
+.header {
+  justify-content: flex-start;
+}
+
+/* main form
+***************
+*/
+
+.Sign-In h3 {
+  font-size: 50px;
+  font-family: spartan;
+}
+
+input {
+  font-family: Avenir;
+  font-size: 29px;
+}
+
+span {
+  font-family: spartan;
+  font-size: 32px;
+}
+
+.button {
+  font-family: spartan;
+  font-size: 35px;
+}
+
+p {
+  font-family: spartan;
+  font-size: 29px;
+}
+
+.main {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.main table {
+  border-collapse: collapse;
+}
+
+.main .border {
+  border-top: 1px solid black;
+  font-weight: bold;
+}
+
+.main td,
+tr {
+  padding-right: 70px;
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+
+/*form Style sign-in
+*****************
+*/
+
+.Sign-In-form {
+  margin: 10%;
+}
+
+input[type="email"],
+[type="Password"],
+text {
+  width: 450px;
+  padding: 1% 10%;
+  background-color: #eaeaea;
+  border: 1px;
+}
+
+.button {
+  background-color: #5aa344;
+  color: white;
+  border: 1px;
+  padding: 12px;
+}
+
+p {
+  font-family: spartan;
+  font-size: 25px;
+}
+
+/* @media screen for form
+*/
+@media screen and (max-width: 600px) {
+  .col-25,
+  .col-75,
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+/* index.html
+  **********************************
+  */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0f0;
+}
+
+span {
+  float: left;
+}
+
+li a {
+  float: right;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a img {
+  width: 30px;
+  height: 20px;
+}
+
+li a:hover {
+  background-color: #00f;
+}
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+}
+
+.container img {
+  opacity: 0.4;
+}
+/* Bottom right text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.middle h1 {
+  margin-top: 10%;
+  text-align: center;
+  font-weight: lighter;
+    font-family: spartan;
+    color: #373836;
+}
+
+.row {
+  width: 75%;
+  height: 100%;
+  max-width: 1000px;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-mosaic {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10%;
+}
+.card-tall .bi {
+  position: absolute;
+  right: 20%;
+  top: 20%;
+}
+.card-tall {
+  position: relative;
+}
+.card-tall h4 {
+  position: absolute;
+  bottom: 5%;
+  font-size: 25px;
+  left: 15%;
+}
+.card-tall h4 a {
+  text-decoration: none;
+  color: white;
+  font-family: spartan;
+    font-weight: lighter;
+}
+
+.image-mosaic .card-img {
+  position: absolute;
+}
+
+.card-img a {
+  text-decoration: none;
+  color: white;
+  top: 40px;
+  position: absolute;
+  right: 30px;
+  font-family: spartan;
+    font-weight: lighter;
+}
+
+.plus {
+  position: absolute;
+}
+
+.plus .bi {
+  position: absolute;
+  bottom: 47px;
+  left: 80px;
+}
+
+.image-mosaic .card-img2 {
+  position: absolute;
+}
+
+.card-img2 a {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 35px;
+  top: 50px;
+  font-family: spartan;
+    font-weight: lighter;
+}
+
+.plus1 {
+  position: absolute;
+}
+
+.plus1 .bi {
+  position: absolute;
+  left: 80px;
+  bottom: 47px;
+}
+
+.image-mosaic .card-img3 {
+  position: absolute;
+}
+
+.card-img3 a {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 35px;
+  top: 50px;
+  font-family: spartan;
+    font-weight: lighter;
+}
+
+.plus2 {
+  position: absolute;
+}
+
+.plus2 .bi {
+  position: absolute;
+  left: 80px;
+  bottom: 47px;
+}
+
+.image-mosaic .card-img4 {
+  position: absolute;
+}
+
+.card-img4 a {
+  text-decoration: none;
+  color: white;
+  position: absolute;
+  right: 35px;
+  top: 50px;
+  font-family: spartan;
+    font-weight: lighter;
+}
+
+.plus3 {
+  position: absolute;
+}
+
+.plus3 .bi {
+  position: absolute;
+  left: 80px;
+  bottom: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 2rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Source Serif Pro", serif;
+}
+
+.buttons {
+  font-size: 22px;
+  margin-top: 2%;
+  margin-left: 4.2%;
+}
+
+.fa:hover {
+  color: darkcyan;
+}
+
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+/*CSS Grid*/
+.section-grid {
+  display: flex;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.grid-prod {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+.prod-grid {
+  flex: 1 1 15%;
+  padding: 12px;
+  margin-top: 50px;
+}
+
+.prod-grid img {
+  width: 100%;
+  opacity: 1;
+  font-weight: lighter;
+}
+h3,
+p {
+  text-align: left;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  olor: #0d1505;
+    font-weight: 400;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a,
+.dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.sidenav a:hover,
+.dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+/* Main content */
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  background-color: green;
+  color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  background-color: #262626;
+  padding-left: 8px;
+}
+
+vl {
+  border-left: 2px solid green;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  margin-left: -40%;
+  margin-top: 150px;
+  top: 0;
+}
+
+.hr-line {
+  width: 120px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .section-list,
+  .buttons {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card-tall {
+    grid-row: span 2 / auto;
+  }
+
+  .card-wide {
+    grid-column: span 2 / auto;
+  }
+}
+
+/*
+  cart.html
+  *********************
+  */
+.head-cart p {
+  margin-right: 65%;
+  margin-top: 5%;
+  font-family: "Source Serif Pro", serif;
+  font-weight: bold;
+}
+
+/* beef */
+.outer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin-bottom: 20%;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+.inner-grid {
+  flex: 25%;
+  max-width: 20%;
+  padding: 0 15px;
+}
+.inner-grid img {
+  width: 100%;
+}
+
+.product-des {
+  background-color: #d9e3d6;
+  margin-top: -2%;
+  margin-left: 1%;
+  margin-bottom: 10%;
+}
+
+.product-des p {
+  font-size: 16px;
+  margin-left: 15%;
+}
+
+.product-des h4 {
+  color: #3e742d;
+  font-weight: 100;
+  margin-left: 15%;
+  margin-top: 0;
+}
+
+.product-des hr {
+  margin-right: 60%;
+    margin-left: 6%;
+}
+
+.bottom-card {
+  display: flex;
+}
+
+.bottom-card h2 {
+  text-align: right;
+}
+
+.bottom-card p {
+  margin-left: 15%;
+}
+
+.bottom-card span {
+ 
+  font-size: 20px;
+  margin-top: 25%;
+  margin-right: 40%;
+}
+.span1 span{
+  color:#2C2B2B;
+  font-family:Avenir;
+  font-weight:light;
+}
+
+.prawns {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.fish {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.tomato {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.pork {
+  margin-bottom: 5%;
+}
+
+.checkoutbox {
+  background-color: #d9e3d6;
+  height: 50%;
+  margin-left: 2%;
+  border: 1.1px solid #d9e3d6;
+  width: 30%;
+}
+
+.checkoutbox h4 {
+  margin-left: 20%;
+}
+
+.checkoutbox span {
+  float: right;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.checkoutbox p {
+  font-size: medium;
+  
+  margin-right: 35%;
+  margin-left: 1%;
+}
+
+.checkoutbox .Cbutton p {
+  background-color: #5aa344;
+  text-align: center;
+  margin-left: 12%;
+  margin-right: 12%;
+  color: #fff;
+  font-size: large;
+}
+
+@media screen and (max-width: 800px) {
+  .inner-grid {
+    flex: 50%;
+    max-width: 50%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .checkoutbox {
+    flex: 100%;
+    max-width: 100%;
+    margin-right: 10%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .inner-grid {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* vegetables.html */
+.category .cat {
+  font-family: spartan;
+  font-size: 25px;
+  margin-top: 10%;
+  margin-left: 8%;
+}
+
+.list ul {
+  list-style-type: None;
+  background-color: white;
+  margin-left: 4%;
+  margin-top: 1%;
+}
+.list ul li {
+  width: 88%;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #3e742d;
+  font-size: 20px;
+  padding: 5px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.list ul li img {
+  width: 32px;
+  height: 15px;
+  margin-left: 78%;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+.main-section .item {
+  background-color: #d9e3d6;
+  width: 200px;
+  height: 300px;
+}
+.main-section .item img {
+  width: 200px;
+  height: 300px;
+}
+
+/*vegetables.html  for veg list*/
+.items2 {
+  display: inline-grid;
+  width: 60%;
+  grid-template-columns: auto auto auto auto;
+  margin-left: 10%;
+}
+.one {
+  display: flex;
+}
+
+.items2 {
+  margin-left: 3%;
+  margin-top: 0%;
+}
+
+.items2 .tomato {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 320px;
+  height: 320px;
+
+  margin-right: 5%;
+}
+.items2 .tomato img {
+  height: 180px;
+  width: 320px;
+}
+.tomato .item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.tomato .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.tomato .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .tomato hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+/* brocoli */
+.items2 .brocoli {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+}
+.items2 .brocoli img {
+  height: 180px;
+  width: 325px;
+}
+.brocoli .item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.brocoli .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.brocoli .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .brocoli hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+/* kale */
+
+.items2 .kale {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+}
+.items2 .kale img {
+  height: 180px;
+  width: 325px;
+}
+.kale .item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.kale .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.kale .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .kale hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+/* pumpkin */
+
+.two {
+  display: flex;
+}
+.items2 .pumpkin {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.items2 .pumpkin img {
+  height: 180px;
+  width: 325px;
+}
+.pumpkin .item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.pumpkin .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.pumpkin .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .pumpkin hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.items2 .ginger {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.items2 .ginger img {
+  height: 180px;
+  width: 325px;
+}
+.ginger.item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.ginger .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.ginger .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .ginger hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.items2 .ginger hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.items2 .green-chilli {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 320px;
+  height: 320px;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+.items2 .green-chilli img {
+  height: 180px;
+  width: 320px;
+}
+.green-chilli.item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.green-chilli .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.green-chilli .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .green-chilli hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.three {
+  display: flex;
+}
+
+.items2 .lemon {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.items2 .lemon img {
+  height: 180px;
+  width: 325px;
+}
+.lemon .item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.lemon .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.lemon .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .lemon hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.items2 .potato {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.items2 .potato img {
+  height: 180px;
+  width: 325px;
+}
+.potato.item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.potato .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.potato .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .potato hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.items2 .carrot {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.items2 .carrot img {
+  height: 180px;
+  width: 325px;
+}
+.carrot.item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.carrot .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.carrot .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .carrot hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.four {
+  display: flex;
+}
+
+.items2 .spinach {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.items2 .spinach img {
+  height: 180px;
+  width: 325px;
+}
+.spinach.item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.spinach .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.spinach.total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .spinach hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.items2 .lettuce {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.items2 .lettuce img {
+  height: 180px;
+  width: 325px;
+}
+.lettuce.item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.lettuce .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.lettuce .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .lettuce hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+
+.items2 .onion {
+  width: 20%;
+
+  background-color: #d9e3d6;
+  width: 325px;
+  height: 320px;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+.items2 .onion img {
+  height: 180px;
+  width: 325px;
+}
+.onion.item-name {
+  color: #3e742d;
+  padding-left: 10%;
+}
+.onion .price {
+  color: #393b39;
+  padding-left: 10%;
+}
+.onion .total {
+  color: #393b39;
+  padding-left: 13%;
+}
+
+.items2 .onion hr {
+  width: 30%;
+
+  margin-left: 10%;
+}
+.button1 {
+  color: white;
+  background-color: #64b94b;
+  border: 1px;
+  padding: 8px 10px;
+}
+.tomato .button1 {
+  margin-left: 78%;
+}
+.brocoli .button1 {
+  margin-left: 78%;
+}
+.kale .button1 {
+  margin-left: 78%;
+}
+.pumpkin .button1 {
+  margin-left: 78%;
+}
+.ginger .button1 {
+  margin-left: 78%;
+}
+.green-chilli .button1 {
+  margin-left: 78%;
+}
+.lemon .button1 {
+  margin-left: 78%;
+}
+.potato .button1 {
+  margin-left: 78%;
+}
+.carrot .button1 {
+  margin-left: 78%;
+}
+.spinach .button1 {
+  margin-left: 78%;
+}
+.lettuce .button1 {
+  margin-left: 78%;
+}
+.onion .button1 {
+  margin-left: 78%;
+}
+
+
+/* cart.html */
+
+#container .left  {
+  width: 20%;
+  float: left;
+  margin-top: 10%;
+  
+}
+#container .right {
+  width: 79%;
+  float: right;
+  margin-top: 10%;
+  height: 100%;
+}
+.right .veg-head{
+  margin-right:79% ;
+  font-weight: lighter;
+  color:#373836;
+  margin-bottom: 5%;
+}
+
+.right {
+  border-left: 1px solid black;
+  height: 1257px;
+}
+@media screen and (max-width:700px) {
+  
+
+.right {
+  border-left: 1px solid black;
+  height: 3857px;
+}
+}
+@media screen and (max-width:710px) {
+  
+  .right {
+    border-left: 1px solid black;
+    height: 1757px;
+  }
+  }
+/* vegetables.html */
+.category .cat{
+  font-family: spartan;
+  font-size:25px;
+  margin-top: 10%;
+  margin-left: 8%;
+  
+
+}
+
+
+
+.list ul{
+  list-style-type: None;
+  background-color: white;
+  margin-left: 4%;
+  margin-top: 1%;
+}
+.list ul li{
+  width:88%;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color:#3E742D;
+  font-size: 20px;
+  padding:5px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+ 
+}
+
+ 
+ 
+
+.list ul li img{
+  
+
+  width:32px;
+  height: 15px;
+  margin-left:78% ;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+.main-section .item{
+
+      
+      
+       background-color:#D9E3D6;
+       width:200px;
+       height:300px;
+}
+.main-section .item img{
+      width:200px;
+       height:300px;
+       
+}
+
+
+/* vegetables.html */
+
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+ 
+}
+
+.card1 {
+
+width:230px;
+margin-left:5%;
+margin-bottom: 8%;
+margin-right:0%;
+background-color:#D9E3D6;
+   }
+   .grid .card1{
+      background-color:#D9E3D6; 
+      margin:10px none;
+   }
+
+  .grid .card1 img{
+      width:230px;
+      height:180px;
+     
+  }
+
+.grid .card1 .item-name{
+  color:#3E742D;
+  padding-left:10%;
+
+}
+.grid .card1 .price{
+  font-family: spartan;
+  color: #393B39;
+  padding-left:10%;
+}
+.grid .card1 .total{
+  font-family: spartan;
+  color: #393B39;
+  padding-left:10%;
+}
+
+   .grid .card1 .button1{
+       color:white;
+       background-color:#64B94B;
+       margin-left:70%;
+       padding:8px 10px;
+       border:1px;
+       margin-bottom: 4%;
+   } 
+ .grid .card1 hr{
+     width:30%;
+     margin-right:65%;
+ }
+
+@media screen and (max-width: 1100px) {
+  .grid{
+      grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .grid{
+      grid-template-columns: repeat(1, 1fr); 
+  }
+}
+
+
+
+/* extra css to align */
+.main2{
+  margin-left:25%;
+}
+footer {
+  
+   
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+
+
+
+  /* form styling */
+
+/* main form
+***************
+*/
+
+.Sign-In h3 {
+  font-size: 50px;
+  font-family: spartan;
+
+}
+
+.Sign-Up h4 {
+  font-size: 50px;
+  font-family: spartan;
+}
+
+input {
+  font-family: Avenir;
+  font-size: 29px;
+  border: 1px;
+  background-color: #EAEAEA ;
+  width:495px;
+}
+
+span {
+  font-family: spartan;
+  font-size: 20px;
+}
+
+.button {
+  font-family: spartan;
+  font-size: 35px;
+}
+
+p {
+  font-family: spartan;
+  font-size: 29px;
+}
+
+.main {
+  width: 50%;
+  margin:0 auto;
+}
+
+.main table {
+  border-collapse: collapse;
+}
+
+.main .border {
+  border-top: 1px solid black;
+  font-weight: bold;
+}
+
+.main td, tr {
+  padding-right: 70px;
+  padding-left:20px ;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  align-items: center;
+
+}
+
+/*form Style
+*****************
+*/
+
+.Sign-In-form {
+  margin: 10%;
+}
+
+.Sign-Up-form {
+  margin: 10%;
+}
+
+
+
+
+
+.Sign-In a {
+  justify-content: flex-end;
+  margin-right: 15px;
+  font-family: spartan;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.header{
+  justify-content: flex-start;
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+/* main form
+***************
+*/
+
+.Sign-In h3 {
+  font-size: 50px;
+  font-family: spartan;
+
+}
+
+input {
+  font-family: Avenir;
+  font-size: 25px;
+}
+
+span {
+  font-family: spartan;
+  font-size: 32px;
+}
+
+.button {
+  font-family: spartan;
+  font-size: 28px;
+}
+
+p {
+  font-family: spartan;
+  font-size: 29px;
+}
+
+.main {
+  width: 50%;
+  margin:0 auto;
+}
+
+.main table {
+  border-collapse: collapse;
+}
+
+.main .border {
+  border-top: 1px solid black;
+  font-weight: bold;
+}
+
+.main td, tr {
+  padding-right: 70px;
+  padding-left:20px ;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  align-items: center;
+
+}
+
+/*form Style
+*****************
+*/
+::placeholder{
+  font-size: 15px;
+}
+.Sign-In-form {
+  margin: 10%;
+}
+.input1
+input[type=email],[type=Password],[type=name],[type=password],text {
+  width: 200px;
+  padding: 0% 10%;
+  background-color:#EAEAEA;
+  border: 1px;
+}
+@Media screen and (max-width: 700px) {
+.input1 input[type=email],[type=Password],[type=name],[type=password],text{
+  width: 250px;
+  padding: 0% 10%;
+  background-color:#EAEAEA;
+  border: 1px;
+}
+}
+@Media screen and (max-width: 500px) {
+  .input1 input[type=email],[type=Password],[type=name],[type=password],text{
+      width: 210px;
+      padding: 0% 10%;
+      background-color:#EAEAEA;
+      border: 1px;
+  }
+  }
+
+
+.button {
+  background-color: #5AA344;
+  color: white;
+  border: 1px;
+  
+  padding: 7px 17px;
+    font-size: 21px;
+    font-weight: lighter;
+}
+
+p {
+  font-family: spartan;
+  font-size: 25px;
+  color: #373836;
+  margin-right:24%
+}
+.input2 input[type=email],[type='password'],text
+{
+  width: 200px;
+  padding: 0% 10%;
+  background-color:#EAEAEA;
+  border: 1px;
+}
+@Media screen and (max-width: 700px) {
+.input2 input[type=email],[type='password'],text
+{
+  width: 250px;
+  padding: 0% 10%;
+  background-color:#EAEAEA;
+  border: 1px;
+}
+}
+@Media screen and (max-width: 500px) {
+  .input2 input[type=email],[type='password'],text{
+  width: 210px;
+  padding: 0% 10%;
+  background-color:#EAEAEA;
+  border: 1px;
+  
+  }
+  }
+
+  span{
+      font-family: spartan;
+  font-size: 20px;
+  }
+ 
+  .input3 input[type='name'],[type='pnumber'],[type='address'],[type='code'],[type='apt'],[type='city'],[type='state'],text{
+      width: 200px;
+      padding: 0% 10%;
+      background-color:#EAEAEA;
+      border: 1px;
+      
+  }
+  @Media screen and (max-width: 700px) {
+  .input3 input[type='name'],[type='pnumber'],[type='address'],[type='code'],[type='apt'],[type='city'],[type='state'],text{
+      width: 250px;
+      padding: 0% 10%;
+      background-color:#EAEAEA;
+      border: 1px;
+      
+  }
+}
+  @Media screen and (max-width: 500px) {
+  .input3 input[type='name'],[type='pnumber'],[type='address'],[type='code'],[type='apt'],[type='city'],[type='state'],text{
+      width: 210px;
+      padding: 0% 10%;
+      background-color:#EAEAEA;
+      border: 1px;
+      
+  }
+}
+.footer p {
+  font-family: spartan;
+  font-size: 14px;
+  color: rgb(55, 56, 54);
+  text-align: left;
+}
+.footer1 p {
+  font-family: spartan;
+  font-size: 14px;
+  color: rgb(55, 56, 54);
+  text-align: left;
+}
+
+h3 p .gro{
+  margin-top:3%;
+
+}
+.footer {
+position:absolute;
+  bottom:0;
+  width:100%;
+  
+}
+.footer1{
+  bottom:0;
+  width:100%;
+}
+  .footer1 p{
+    margin-right:75%;
+    text-align: justify;
+  }
+
+.reg p{
+  
+    font-family: spartan;
+    font-size: 22px;
+    color: #373836;
+   
+    
+}
+
+.centered h3, p {
+  text-align: center;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #0d1505;
+  font-weight: 400;
+}
+#div1 .prod-grid h3, p {
+  text-align: left;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  color: #373836;
+  font-weight: 400;
+}
+.sign-up p{
+  text-align: left;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: #0d1505;
+    font-weight: 400;
+
+}
+.new-acc p{
+  font-family: spartan;
+  font-size: 20px;
+  color: #373836;
+ 
+
+}
+.reg p{
+  font-family: spartan;
+  font-size: 20px;
+  color: #373836;
+
+}
+.my-details p{
+  font-size: 30px;
+  color:black;
+}
+.check p{
+  font-size: 25px;
+  color:black;
+
+
+}
+td{
+  color:#4E4E4E;
+}
+.head-cart p{
+  margin-left:12%;
+}
+
+
+@media only screen and (max-width: 375px) {
+
+
+
+.choza {
+  color: #373836;
+  font-size: 13px;
+  font-family: spartan;
+  font-weight: bold;
+}
+}
+@media only screen and (max-width:375px){
+.category .cat {
+  font-family: spartan;
+  font-size: 16px;
+  margin-top: 10%;
+  margin-left: 8%;
+}
+}
+
+@media only screen and (max-width: 375px) {
+.main td, tr {
+  padding-right: 39px;
+  padding-left: 0px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  align-items: center;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+.bottom-card span {
+  font-size: 15px;
+  margin-top: 25%;
+  margin-right: 69%;
+}
+}
+
+/* correction in CSS */
+.card {
+  background-image: url('img/grid1.png')
+
+}
+.rect{
+  width:85%; height:85%
+}
+
+.card2{
+  background-image: url('img/grid2.png')
+}
+.rect{
+  width:85%; height:85%
+}
+.card3{
+  background-image: url('img/grid3.png')
+}
+.card4{
+  background-image: url('img/grid4.png')
+}
+.card5{
+  background-image: url('img/grid5.png')
+}
+.png1 img{
+  width:100%;
+}
+.footer hr{
+  border: 2px solid #3e742d; width:95%;
+}
+.footer1 hr{
+  border: 2px solid #3e742d; width:95%;
+}
+
+.sign-In h3{
+  text-align:left;
+}
