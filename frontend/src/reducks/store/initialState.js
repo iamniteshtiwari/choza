@@ -1,5 +1,7 @@
 const initialState = {
-  
+  items: {
+
+  },
     user: {
         user_name: "",
         email: "",

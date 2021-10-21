@@ -8,6 +8,7 @@ import Header from '../components/common/Header'
 
 
 
+
 const SignIn = () => {
     const dispatch = useDispatch();
   
@@ -22,7 +23,8 @@ const SignIn = () => {
       setPassword(event.target.value);
     };
   
-    const signInButton = () => {
+    const signInButton = (event) => {
+      event.preventDefault();
       dispatch(signIn(email, password));
       setEmail("");
       setPassword("");
@@ -37,12 +39,12 @@ const SignIn = () => {
 <h3 class ="sign-In">SIGN IN</h3> 
 <div class = "input2">
     <span>Email Adress: </span><br/>
-    <input type = "email" onChange={inputEmail} required placeholder="Enter Email "/> <br/>
+    <input type = "email" onChange={inputEmail} value={email} required placeholder="Enter Email "/> <br/>
     <br/>
     
 
     <span>Password: </span><br/>
-    <input type = "password" onChange={inputPassword} required placeholder="Enter Password"/><br/>
+    <input type = "password" onChange={inputPassword} value={password} required placeholder="Enter Password"/><br/>
     <br/>
      <button class = "button" onClick={signInButton}> Sign In </button>
 <div class="reg">

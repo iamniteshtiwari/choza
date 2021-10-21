@@ -15,6 +15,7 @@ export const fetchUserFromLocalStorage = () => {
 }
 
 export const signUp = (user_name, email, password) => {
+    console.log("password", password);
     return async (dispatch) => {
         // Validation
         if (user_name === "" || email === "" || password === "") {

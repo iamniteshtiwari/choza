@@ -42,23 +42,24 @@ export default class API {
         formData.append("username", username);
         formData.append("email", email);
         formData.append("password", password);
+        console.log('password',password);
         const savedPost = await api
-          .post("/users/signup/", formData)
-          .then((response) => {
-            console.log("hello world");
-            return response.data;
-          })
-          .catch((error) => {
-            throw new Error(error);
-          });
-        return savedPost;
-      };
+            .post("/user/signup/", formData)
+            .then((response) => {
+                console.log(response.data);
+                return response.data
+            })
+            .catch((error) => {
+                throw new Error(error)
+            })
+        return savedPost
+    }
     signIn = async (email, password) => {
         const formData = new FormData();
         formData.append("email", email);
         formData.append("password", password);
         const savedPost = await api
-            .post("/users/signin/", formData)
+            .post("/user/signin/", formData)
             .then((response) => {
                 return response.data
             })
@@ -81,7 +82,7 @@ export default class API {
             .catch((error) => {
                 throw new Error(error)
             })
-      
+        return posts
     }
 
 
@@ -116,4 +117,19 @@ export default class API {
             throw new Error(error);
         });
     };
+    getItems = async (category) => {
+        let url = "/items";
+        if (category) {
+          url += "?category=" + category;
+        }
+        const posts = await api
+          .get(url)
+          .then((response) => {
+            return response.data;
+          })
+          .catch((error) => {
+            throw new Error(error);
+          });
+        return posts;
+      };
 }

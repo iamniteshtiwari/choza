@@ -1,7 +1,11 @@
-
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getItems } from "../reducks/items/selectors";
+import { fetchItems } from "../reducks/items/operations";
+import { push } from "connected-react-router";
+import queryString from "query-string";
 import Header from '../components/common/Header'
-
+import Items from "../components/common/Items";
 import img1 from "../assets/img/img1.png"
 import Rect from "../assets/img/Rectangle_225.png"
 import Rect1 from "../assets/img/Rectangle _226.png"
@@ -10,19 +14,32 @@ import grid2 from "../assets/img/down-grid2.png"
 import grid3 from "../assets/img/down-grid3.png"
 import grid4 from "../assets/img/down-grid4.png"
 import grid5 from "../assets/img/down-grid5.png"
-import HomeCard from '../components/common/HomeCard'
-
-
-
-
-
 
 function Home() {
+
+  const parsed = queryString.parse(window.location.search);
+  const [page, setPage] = useState(1);
+  const [category_name, setCategoryName] = useState(null);
+  const dispatch = useDispatch();
+  const selector = useSelector((state) => state);
+  const items = getItems(selector);
+  useEffect(() => {
+    if (parsed.page != undefined) {
+      setPage(parsed.page);
+    }
+    if (parsed.category_name != undefined) {
+      setCategoryName(parsed.category_name);
+    }
+  }, []); 
+  useEffect(() => {
+    dispatch(fetchItems(page, category_name));
+  }, [page,category_name]);
+
     return (
         <>
-       <Header/>
-
-
+       <Header/>{
+         console.log(items)
+       }
         <div class="container">
     <img src={img1} alt="veg"/>
     <div class="centered">
@@ -92,11 +109,15 @@ function Home() {
       <div id="div1">
         <section class="section-grid">
         <div class="grid-prod">
-          <HomeCard/>
-          <HomeCard/>
-          <HomeCard/>
-          <HomeCard/>
-          <HomeCard/>
+          { 
+            items.map((item)=>(
+              <li key={item.id}>
+                <div>
+                  {item.name}
+                </div>
+              </li>
+            ))
+          }
          </div>
          </section> 
       </div>
