@@ -117,19 +117,15 @@ export default class API {
             throw new Error(error);
         });
     };
-    getItems = async (category) => {
-        let url = "/items";
-        if (category) {
-          url += "?category=" + category;
-        }
-        const posts = await api
-          .get(url)
-          .then((response) => {
-            return response.data;
-          })
-          .catch((error) => {
-            throw new Error(error);
-          });
-        return posts;
+    getItems = async (page, category) => {
+        const items = await api
+            .get('/items/', { params: { category, page } })
+            .then(response => {
+                return response.data;
+            })
+            .catch(error => {
+                throw new Error(error);
+            });
+        return items;
       };
 }
