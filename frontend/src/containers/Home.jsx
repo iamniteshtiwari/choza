@@ -110,7 +110,7 @@ function Home() {
         <section class="section-grid">
         <div class="grid-prod">
           { 
-            items.map((item)=>(
+            items.results.map((item)=>(
               <li key={item.id}>
                 <div>
                   {item.name}
