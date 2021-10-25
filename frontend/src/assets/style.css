@@ -92,7 +92,17 @@ tr {
   padding-bottom: 10px;
   align-items: center;
 }
-
+.grid-prod li{
+  text-decoration: none;
+  list-style-type: none;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: row wrap;
+    width: 20%;;
+}
+.grid{
+  list-style-type: none;
+}
 /*form Style sign-in
 *****************
 */
@@ -389,6 +399,7 @@ h1 {
   width: 100%;
   opacity: 1;
   font-weight: lighter;
+  height: 49%;
 }
 h3,
 p {

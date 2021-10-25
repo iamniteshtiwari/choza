@@ -9,10 +9,11 @@ export default function Header() {
             <div class = "header">
                 <span class = "choza"> CHOZA</span><br/>
                 <span class = "choza"> DE ABARROTES </span>
-            </div>
+                <a href="Home"></a>
+           </div>
             <div class = "Sign-In">
-                <a href = "signin">Sign-In</a> &nbsp; <a href = "SignUp">Sign-Up</a>
-                <a href = "cart" alt="cart">
+                <a href = "Signin">Sign-In</a> &nbsp; <a href = "SignUp">Sign-Up</a>
+                <a href = "Cart" alt="cart">
                     <img class="cart-icon" src = {outlinePrev} alt="cart"/>
                 </a>
             </div>

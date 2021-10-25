@@ -109,15 +109,20 @@ function Home() {
       <div id="div1">
         <section class="section-grid">
         <div class="grid-prod">
+        
           { 
-            items.results.map((item)=>(
+          
+            items.results.filter((item,idx)=> idx<4).map((item)=>(
               <li key={item.id}>
-                <div>
-                  {item.name}
+                  <div class="prod-grid">
+                  <img src={item.image} alt="" />
+                  <h3>{item.name} </h3>
+                  <p>{item.price}</p>
                 </div>
               </li>
             ))
           }
+         
          </div>
          </section> 
       </div>

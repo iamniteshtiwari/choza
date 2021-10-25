@@ -1,17 +1,20 @@
 import React from 'react'
+import chicken from '../assets/img/chicken.png'
+import Header from '../components/common/Header'
 
 export default function Cart() {
     return (
         <>
+        <Header/>
 <div class="head-cart">
             <p>My Cart</p>
 </div>
 <div class="outer-grid">
          <div class="inner-grid">
          <div class="product-des">
-         <img src="img/chicken.png"/>
+         <img src={chicken}/>
         <h4>Chicken</h4>
-        <P>1 kg - $15</P><hr/>
+        <p>1 kg - $15</p><hr/>
         <div class="bottom-card">
         <p>$15.00</p>
         <div class="span1">
@@ -22,9 +25,9 @@ export default function Cart() {
 </div>
 <div class="fish">
      <div class="product-des">
-  <img src="img/fish.png"/>  
+     <img src={chicken}/> 
   <h4>Fish</h4>
-    <P>1 kg - $20</P><hr/>
+    <p>1 kg - $20</p><hr/>
     <div class="bottom-card">
     <p>$25.00</p>
     <div class="span1">
@@ -37,9 +40,9 @@ export default function Cart() {
 <div class="inner-grid">
 <div class="product-des">
     <div class="beef">
-  <img src="img/beef.png"/>  
+    <img src={chicken}/> 
   <h4>Beef</h4>
-    <P>1 kg - $25</P><hr/>
+    <p>1 kg - $25</p><hr/>
     <div class="bottom-card">
     <p>$15.00</p>
     <div class="span1">
@@ -50,9 +53,9 @@ export default function Cart() {
     </div>
     <div class="prawns">
     <div class="product-des"> 
-<img src="img/prawns.png"/>
+    <img src={chicken}/>
 <h4>Prawns</h4>
-    <P>1 kg - $30</P><hr/>
+    <p>1 kg - $30</p><hr/>
     <div class="bottom-card">
     <p>$30.00</p>
     <div class="span1">
@@ -66,9 +69,9 @@ export default function Cart() {
 <div class="inner-grid">
     <div class="product-des"> 
         <div class="pork">
-    <img src="img/pork.png"/>
+        <img src={chicken}/>
     <h4>Pork</h4>
-    <P>1 kg - $10</P><hr/>
+    <p>1 kg - $10</p><hr/>
     <div class="bottom-card">
     <p>$10.00</p>
     <div class="span1">
@@ -90,7 +93,7 @@ export default function Cart() {
 </div>
 
         <div class="footer1">
-            <hr style="border: 2px solid #3e742d; width:95%"/>
+            <hr/>
             <p>CHOZA <br/>DE
               ABARROTES</p>
         </div>
