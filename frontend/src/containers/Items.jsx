@@ -7,6 +7,7 @@ import { getItems } from "../reducks/items/selectors";
 import { fetchItems } from "../reducks/items/operations";
 import { push } from "connected-react-router";
 import queryString from "query-string";
+import CartItem from "../components/common/CartItem";
 
 
 
@@ -65,15 +66,8 @@ export default function Items() {
          
              {
          items.results.map((item)=>(
-              <li key={item.id}>
-                 <div class="card1">
-                  <img src={item.image} alt="" />
-                  <div class="item-name">{item.name} </div>
-                  <hr/>
-                  <div class="total">{item.price}</div>
-                  <button class="button1">Add++</button>
-                </div>
-              </li>
+           
+                  <item key={item.id}   item={item} />
          ))
          }
 

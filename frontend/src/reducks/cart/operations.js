@@ -1,65 +1,113 @@
-import API from "../../API"
-import {addCartAction, increaseCartAction, decreaseCartAction, fetchCartAction} from "./actions";
+import API from "../../API";
+import {
+  addCartAction,
+  fetchCartItemsAction,
+  increaseCartAction,
+  decreaseCartAction,
+} from "./actions";
 
 const api = new API();
-const CARTS_KEY = "CARTS_KEY";
 
-export const fetchFromLocalStorage = () => {
-    return async (dispatch) => {
-        let cartsJSON = localStorage.getItem(CARTS_KEY);
-        let carts = {};
-        if (cartsJSON) {
-            carts = JSON.parse(cartsJSON);
-        }
+export const fetchCarts = () => {
+  return async (dispatch) => {
+    return api
+      .getCarts()
+      .then((carts) => {
         const subtotal = calculateSubtotal(carts);
-        dispatch(fetchCartAction(carts, subtotal));
-    }
-}
+        dispatch(fetchCartItemsAction(carts, subtotal));
+      })
+      .catch((error) => {
+        alert("Failed to connect API: /carts/");
+      });
+  };
+};
 
 export const addCart = (item) => {
-    return async (dispatch, getState) => {
-        let prevCarts = getState().carts.list
-        prevCarts[item.id] = {item: item, selected_count: 1};
+  return async (dispatch, getState) => {
+    return api
+      .addCarts(item.id)
+      .then((addedCart) => {
+        let prevCarts = getState().carts.list;
+        addedCart["item"] = item;
+        prevCarts.push(addedCart);
         const subtotal = calculateSubtotal(prevCarts);
-        setToLocalStorage(prevCarts);
         dispatch(addCartAction(prevCarts, subtotal));
-   }
-}
-export const increaseCart = (item) => {
-    return async (dispatch, getState) => {
-        let prevCarts = getState().carts.list
-        let nextSelectedCount = prevCarts[item.id].selected_count + 1;
-        prevCarts[item.id] = {"item": item, "selected_count": nextSelectedCount};
-        const subtotal = calculateSubtotal(prevCarts);
-        setToLocalStorage(prevCarts);
-        dispatch(increaseCartAction(prevCarts, subtotal))
-   }
-}
+      })
+      .catch((error) => {
+        alert("Failed to connect API to add cart");
+        console.log(error);
+      });
+  };
+};
 
-export const decreaseCart = (item) => {
-    return async (dispatch, getState) => {
-        let prevCarts = getState().carts.list
-        let nextSelectedCount = prevCarts[item.id].selected_count - 1;
-        if (nextSelectedCount > 0) {
-            prevCarts[item.id] = {"item": item, "selected_count": nextSelectedCount};
-        } else {
-            delete prevCarts[item.id];
-        }
-        const subtotal = calculateSubtotal(prevCarts);
-        setToLocalStorage(prevCarts);
-        dispatch(decreaseCartAction(prevCarts, subtotal))
-   }
-}
+export const increaseCart = (cart_id) => {
+  return async (dispatch, getState) => {
+    let prevCarts = getState().carts.list;
+    let matchedCarts = prevCarts.filter((cart) => cart.id === cart_id);
+    let nextSelectedCount = 0;
+    if (matchedCarts.length > 0) {
+      nextSelectedCount = matchedCarts[0].quantity + 1;
+    }
 
-const setToLocalStorage = (carts) => {
-    localStorage.setItem(CARTS_KEY, JSON.stringify(carts));
-}
+    return api
+      .updateCarts(cart_id, nextSelectedCount)
+      .then((updatedCart) => {
+        prevCarts = prevCarts.filter((cart) => cart.id === cart_id);
+        updatedCart["item"] = updatedCart.item_id;
+        updatedCart["item_id"] = updatedCart.item_id.id;
+        prevCarts.unshift(updatedCart);
+        const subtotal = calculateSubtotal(prevCarts);
+        dispatch(increaseCartAction(prevCarts, subtotal));
+      })
+      .catch((error) => {
+        alert("Failed to connect API to increase cart's quantity");
+        console.log(error);
+      });
+  };
+};
+
+export const decreaseCart = (cart_id) => {
+  return async (dispatch, getState) => {
+    let prevCarts = getState().carts.list;
+    let matchedCarts = prevCarts.filter((cart) => cart.id === cart_id);
+    let nextSelectedCount = matchedCarts[0].quantity - 1;
+    if (nextSelectedCount > 0) {
+      // if quantity is more than 0, update
+      return api
+        .updateCarts(cart_id, nextSelectedCount)
+        .then((updatedCart) => {
+          prevCarts = prevCarts.filter((cart) => cart.id !== cart_id);
+          prevCarts.push(updatedCart);
+          updatedCart["item"] = updatedCart.item_id;
+          updatedCart["item_id"] = updatedCart.item_id.id;
+          const subtotal = calculateSubtotal(prevCarts);
+          dispatch(decreaseCartAction(prevCarts, subtotal));
+        })
+        .catch((error) => {
+          alert("Failed to connect API to decrease cart's quantity");
+          console.log(error);
+        });
+    } else {
+      // if quantity is 0, delete
+      return api
+        .deleteCarts(cart_id)
+        .then((deletedCart) => {
+          prevCarts = prevCarts.filter((cart) => cart.id !== cart_id);
+          const subtotal = calculateSubtotal(prevCarts);
+          dispatch(decreaseCartAction(prevCarts, subtotal));
+        })
+        .catch((error) => {
+          alert("Failed to connect API to decrease cart's quantity");
+          console.log(error);
+        });
+    }
+  };
+};
 
 const calculateSubtotal = (carts) => {
-    let subtotal = 0;
-    console.log(carts);
-    for (let key in carts) {
-        subtotal += (Number(carts[key].item.price) * carts[key].selected_count);
-    }
-   return subtotal;
-}
+  let subtotal = 0;
+  for (let key in carts) {
+    subtotal += Number(carts[key].item_id.price) * carts[key].quantity;
+  }
+  return subtotal;
+};

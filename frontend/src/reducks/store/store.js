@@ -3,6 +3,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
 import {UserReducer} from '../users/reducers';
 import { ItemsReducer } from '../items/reducers'
+import CartItem from '../../components/common/CartItem';
 
 
 
@@ -12,6 +13,7 @@ export default function createStore(history) {
             router: connectRouter(history),
             user: UserReducer,
             items: ItemsReducer,
+            cart: CartItem
         }),
         compose(
             applyMiddleware(routerMiddleware(history), thunk),

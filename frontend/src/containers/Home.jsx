@@ -4,16 +4,16 @@ import { getItems } from "../reducks/items/selectors";
 import { fetchItems } from "../reducks/items/operations";
 import { push } from "connected-react-router";
 import queryString from "query-string";
-import Header from '../components/common/Header'
-import Items from "../components/common/Items";
-import img1 from "../assets/img/img1.png"
-import Rect from "../assets/img/Rectangle_225.png"
-import Rect1 from "../assets/img/Rectangle _226.png"
-import grid1 from "../assets/img/down-grid1.png"
-import grid2 from "../assets/img/down-grid2.png"
-import grid3 from "../assets/img/down-grid3.png"
-import grid4 from "../assets/img/down-grid4.png"
-import grid5 from "../assets/img/down-grid5.png"
+import Header from '../components/common/Header';
+import CartItem from "../components/common/CartItem";
+import img1 from "../assets/img/img1.png";
+import Rect from "../assets/img/Rectangle_225.png";
+import Rect1 from "../assets/img/Rectangle _226.png";
+import grid1 from "../assets/img/down-grid1.png";
+import grid2 from "../assets/img/down-grid2.png";
+import grid3 from "../assets/img/down-grid3.png";
+import grid4 from "../assets/img/down-grid4.png";
+import grid5 from "../assets/img/down-grid5.png";
 
 function Home() {
 
