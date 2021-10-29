@@ -1,12 +1,12 @@
 import * as Actions from "./actions";
 import initialState from "../store/initialState";
 
-export const ProductsReducer = (state = initialState.products, action) => {
+export const CartsReducer = (state = initialState.order, action) => {
   switch (action.type) {
-    case Actions.FETCH_PRODUCT:
+    case Actions.ADD_ORDER:
       return {
-        ...state,
-        list: action.payload,
+        list: action.list,
+        subtotal: action.subtotal,
       };
     default:
       return state;

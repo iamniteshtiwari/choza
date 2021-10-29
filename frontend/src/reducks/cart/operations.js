@@ -27,7 +27,9 @@ export const addCart = (item) => {
     return api
       .addCarts(item.id)
       .then((addedCart) => {
-        let prevCarts = getState().carts.list;
+        // console.log('addedCart', addedCart);
+        let prevCarts = getState().carts.results;
+        console.log('prevC', prevCarts);
         addedCart["item"] = item;
         prevCarts.push(addedCart);
         const subtotal = calculateSubtotal(prevCarts);
@@ -107,7 +109,7 @@ export const decreaseCart = (cart_id) => {
 const calculateSubtotal = (carts) => {
   let subtotal = 0;
   for (let key in carts) {
-    subtotal += Number(carts[key].item_id.price) * carts[key].quantity;
+    subtotal += Number(carts[key].item.price) * carts[key].quantity;
   }
   return subtotal;
 };

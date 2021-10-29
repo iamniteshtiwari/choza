@@ -6,7 +6,10 @@ const initialState = {
         previous: null
     },
     carts: {
-        list: [],
+        results: [],
+        count: 0,
+        next: null,
+        previous: null,
         subtotal: 0,
       },
     user: {
@@ -14,6 +17,7 @@ const initialState = {
         email: '',
         token: '',
         token_expires_at: ''
+        
     }
 };
 

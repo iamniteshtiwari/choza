@@ -1,23 +1,33 @@
 import React, { useEffect, useState } from "react";
 import arrow from '../assets/img/down-arrow.svg';
-import veg from '../assets/img/kale.png'
+
 import Header from '../components/common/Header';
 import { useSelector, useDispatch } from "react-redux";
 import { getItems } from "../reducks/items/selectors";
 import { fetchItems } from "../reducks/items/operations";
 import { push } from "connected-react-router";
 import queryString from "query-string";
-import CartItem from "../components/common/CartItem";
+import {
+    addCart,
+    increaseCart,
+    decreaseCart,
+    fetchCarts,
+  } from "../reducks/cart/operations";
+  
 
 
 
-export default function Items() {
+
+export default function Items({item}) {
     const parsed = queryString.parse(window.location.search);
     const [page, setPage] = useState(1);
     const [category_name, setCategoryName] = useState(null);
     const dispatch = useDispatch();
     const selector = useSelector((state) => state);
     const items = getItems(selector);
+    
+  const [particularCart, setParticularCart] = useState(null);
+
     useEffect(() => {
       if (parsed.page != undefined) {
         setPage(parsed.page);
@@ -29,6 +39,26 @@ export default function Items() {
     useEffect(() => {
       dispatch(fetchItems(page, category_name));
     }, [page,category_name]);
+
+
+
+    const clickAddCart = async (item) => {
+        console.log(item);
+          await dispatch(addCart(item));
+          await dispatch(fetchCarts());
+        
+        
+      };
+    
+      const clickPlusCart = async () => {
+        await dispatch(increaseCart(particularCart.id));
+        await dispatch(fetchCarts());
+      };
+      const clickMinusCart = async () => {
+        await dispatch(decreaseCart(particularCart.id));
+        await dispatch(fetchCarts());
+      };
+
     return (
         <>
         <Header/>
@@ -66,8 +96,34 @@ export default function Items() {
          
              {
          items.results.map((item)=>(
-           
-                  <item key={item.id}   item={item} />
+            <li key={item.id}>
+            <div class="card1">
+             <img src={item.image} alt="" />
+             <div class="item-name">{item.name} </div>
+             <hr/>
+             <div class="total">{item.price}</div>
+             {!particularCart ? (
+                 <button class="button1">
+              <div className="add" onClick={() => clickAddCart(item)}>
+                Add +
+              </div>
+              </button>
+            ) : (
+              <div className="number">
+                <span className="minus" onClick={clickMinusCart}>
+                  －
+                </span>
+                <span className="count">{particularCart.quantity}</span>
+                <span className="plus" onClick={clickPlusCart}>
+                  +
+                </span>
+             
+              </div>
+            )}
+          </div>
+        
+      </li>
+                 
          ))
          }
 
@@ -75,8 +131,22 @@ export default function Items() {
 
 
              </div>
+             <div class="checkoutbox">
+        <h4>SUBTOTAL</h4>
+        <p>(5) ITEMS <span> $</span></p>
+        <hr/>
+        <button class="Cbutton"
+        onClick={() => {
+            dispatch(push("/shipping"));
+          }}>
+        Proceed to Checkout
+        </button>
+    
+</div>
             </div>  
+      
         </section>
+        
            
         <div class="footer1">
             <hr/>

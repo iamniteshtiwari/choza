@@ -1,9 +1,9 @@
 import API from "../../API"
 import {signInAction, signUpAction, signOutAction} from "./actions";
 import { push } from "connected-react-router";
+import {LOGIN_USER_KEY} from '../../API'
 
 const api = new API();
-const LOGIN_USER_KEY = "LOGIN_USER_KEY";
 
 export const fetchUserFromLocalStorage = () => {
     return async (dispatch) => {

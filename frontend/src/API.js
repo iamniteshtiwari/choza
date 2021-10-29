@@ -1,5 +1,5 @@
 import axios from 'axios';
-const LOGIN_USER_KEY = 'WD_FORUM_LOGIN_USER_KEY';
+export const LOGIN_USER_KEY = 'CHOZA_LOGIN_USER_KEY';
 
 /* var baseURL;
 if (process.env.REACT_APP_ENVIRONMENT && process.env.REACT_APP_ENVIRONMENT === 'PRODUCTION') {
@@ -19,21 +19,33 @@ const api = axios.create({
  * Add requireToken: true in request config, for API that required Authorization token
  */
 api.interceptors.request.use(
-    config => {
-        if (config.requireToken && localStorage.getItem(LOGIN_USER_KEY)) {
-            config.headers.common['Authorization'] = JSON.parse(localStorage.getItem(LOGIN_USER_KEY)).token;
-        }
-
-        return config;
+    (config) => {
+      if (config.requireToken) {
+        const user = localStorage.getItem(LOGIN_USER_KEY)
+          ? JSON.parse(localStorage.getItem(LOGIN_USER_KEY))
+          : null;
+        config.headers.common["Authorization"] = user.token;
+      }
+      return config;
     },
-    err => {
-        console.error(err);
-    }
+    (err) => console.error(err)
+  );
+
+api.interceptors.response.use(
+	(response) => {
+		return response.data;
+	},
+	(error) => {
+		// if (error.response.status === 401) {
+		// 	localStorage.removeItem(LOGIN_USER_KEY);
+		// }
+
+		return Promise.reject(error);
+	}
 );
 
+
 export default class API {
-
-
       /////////////////////////
     // Users
     /////////////////////////
@@ -121,11 +133,44 @@ export default class API {
         const items = await api
             .get('/items/', { params: { category, page } })
             .then(response => {
-                return response.data;
+                return response;
             })
             .catch(error => {
                 throw new Error(error);
             });
         return items;
       };
+
+    addCarts = async (item_id) => {
+        const savedCart = await api
+        .post(
+            "/cart/add/",
+            {
+            item_id,
+            quantity: 1,
+            },
+            { requireToken: true }
+        )
+        .then((response) => {
+            return response;
+        })
+        .catch((error) => {
+            throw new Error(error);
+        });
+        return savedCart;
+    };
+    getCarts = async () => {
+        const carts = await api
+          .get("cart/", {
+            requireToken: true,
+          })
+          .then((response) => {
+            return response;
+          })
+          .catch((error) => {
+            throw new Error(error);
+          });
+        return carts;
+      };
+      
 }

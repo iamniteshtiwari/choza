@@ -1,8 +1,30 @@
 import React from 'react'
+import  { useEffect } from "react";
 import chicken from '../assets/img/chicken.png'
 import Header from '../components/common/Header'
+import Items from './Items';
+import { getCarts } from "../reducks/cart/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { getUser } from "../reducks/users/selectors";
+import { fetchCarts } from "../reducks/cart/operations";
+import { fetchItems } from '../reducks/items/operations';
+import { getItems } from '../reducks/items/selectors';
+
+
+
 
 export default function Cart() {
+    const selector = useSelector((state) => state);
+    const dispatch = useDispatch();
+    const carts = getCarts(selector);
+    const items = getItems(selector);
+
+    console.log(items);
+  
+    useEffect(() => {
+      dispatch(fetchItems());
+      dispatch(fetchCarts());
+    }, []);
     return (
         <>
         <Header/>
@@ -12,74 +34,17 @@ export default function Cart() {
 <div class="outer-grid">
          <div class="inner-grid">
          <div class="product-des">
-         <img src={chicken}/>
-        <h4>Chicken</h4>
-        <p>1 kg - $15</p><hr/>
-        <div class="bottom-card">
-        <p>$15.00</p>
+         {carts && carts.map((cart) => <Items item={cart.item_id} />)}
         <div class="span1">
         <span>Remove</span>
         </div>
-        </div>
-</div>
-</div>
-<div class="fish">
-     <div class="product-des">
-     <img src={chicken}/> 
-  <h4>Fish</h4>
-    <p>1 kg - $20</p><hr/>
-    <div class="bottom-card">
-    <p>$25.00</p>
-    <div class="span1">
-        <span>Remove</span>
-    </div>
-    </div>
-    </div>
-</div>
-</div>
-<div class="inner-grid">
-<div class="product-des">
-    <div class="beef">
-    <img src={chicken}/> 
-  <h4>Beef</h4>
-    <p>1 kg - $25</p><hr/>
-    <div class="bottom-card">
-    <p>$15.00</p>
-    <div class="span1">
-        <span>Remove</span>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="prawns">
-    <div class="product-des"> 
-    <img src={chicken}/>
-<h4>Prawns</h4>
-    <p>1 kg - $30</p><hr/>
-    <div class="bottom-card">
-    <p>$30.00</p>
-    <div class="span1">
-        <span>Remove</span>
-    </div>
-    </div>
-    </div>
-</div>
+        
 </div>
 
-<div class="inner-grid">
-    <div class="product-des"> 
-        <div class="pork">
-        <img src={chicken}/>
-    <h4>Pork</h4>
-    <p>1 kg - $10</p><hr/>
-    <div class="bottom-card">
-    <p>$10.00</p>
-    <div class="span1">
-        <span>Remove</span>
+
+    
     </div>
-    </div>
-    </div>
-    </div>
+
 
 
     <div class="checkoutbox">
@@ -99,7 +64,8 @@ export default function Cart() {
         </div>
 
         </>
-    )
+    );
 }
 
 
+  
