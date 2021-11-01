@@ -18,6 +18,8 @@ class CartList(CustomLoginRequiredMixin, generics.ListAPIView):
     serializer_class = CartSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['user_id']
+    pagination_class = None
+    
 
 class CartAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
     queryset = Cart.objects.all()

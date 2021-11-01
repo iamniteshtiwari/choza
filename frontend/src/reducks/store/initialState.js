@@ -6,10 +6,7 @@ const initialState = {
         previous: null
     },
     carts: {
-        results: [],
-        count: 0,
-        next: null,
-        previous: null,
+        list: [],
         subtotal: 0,
       },
     user: {

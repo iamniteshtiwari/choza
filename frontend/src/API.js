@@ -58,8 +58,7 @@ export default class API {
         const savedPost = await api
             .post("/user/signup/", formData)
             .then((response) => {
-                console.log(response.data);
-                return response.data
+                return response
             })
             .catch((error) => {
                 throw new Error(error)
@@ -73,7 +72,7 @@ export default class API {
         const savedPost = await api
             .post("/user/signin/", formData)
             .then((response) => {
-                return response.data
+                return response
             })
             .catch((error) => {
                 throw new Error(error)
@@ -146,8 +145,8 @@ export default class API {
         .post(
             "/cart/add/",
             {
-            item_id,
-            quantity: 1,
+                item_id,
+                quantity: 1,
             },
             { requireToken: true }
         )
