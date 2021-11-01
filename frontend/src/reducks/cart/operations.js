@@ -28,7 +28,7 @@ export const addCart = (item) => {
       .addCarts(item.id)
       .then((addedCart) => {
         // console.log('addedCart', addedCart);
-        let prevCarts = getState().carts.results;
+        let prevCarts = getState().carts.list;
         console.log('prevC', prevCarts);
         addedCart["item"] = item;
         prevCarts.push(addedCart);

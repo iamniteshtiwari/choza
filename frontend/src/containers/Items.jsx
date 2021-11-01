@@ -15,9 +15,6 @@ import {
   } from "../reducks/cart/operations";
   
 
-
-
-
 export default function Items({item}) {
     const parsed = queryString.parse(window.location.search);
     const [page, setPage] = useState(1);
