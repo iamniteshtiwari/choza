@@ -6,14 +6,14 @@ export const CartsReducer = (state = initialState.carts, action) => {
     case Actions.FETCH_CART:
       return {
         ...state,
-        ...action.list,
+        list: action.list,
         subtotal: action.subtotal,
       };
     case Actions.ADD_CART:
       return {
         ...state,
-        // results: action.list,
-        // subtotal: action.subtotal,
+        list: action.list,
+        subtotal: action.subtotal,
       };
     case Actions.INCREASE_CART:
       return {
